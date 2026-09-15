@@ -34,10 +34,8 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
                 <>Wedding <br /><span className="italic font-light text-brand-plum">Ceremony</span></>
             </h2>
 
-            <div className="space-y-4 text-stone-500/90 font-serif text-lg sm:text-xl leading-relaxed mb-16 max-w-2xl">
-              <p>Two hearts, two souls, and one beautiful journey…</p>
-              <p>With love in our hearts and dreams in our eyes, we are beginning a new chapter of our lives together. We would be truly blessed to have our loved ones beside us as we promise to walk hand in hand, through every joy, every challenge, and every beautiful moment that life brings.</p>
-              <p>Our forever begins with a “Yes,” and we would love for you to be there to witness the beginning of our happily ever after.</p>
+            <div className="text-stone-500/90 font-serif text-lg sm:text-xl leading-relaxed mb-16 max-w-2xl">
+              <p>Join us as we exchange our vows and step into our forever together.</p>
             </div>
 
             {/* Premium Timeline */}
