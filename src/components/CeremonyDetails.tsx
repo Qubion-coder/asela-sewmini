@@ -24,18 +24,18 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
             <div className="inline-flex items-center gap-4 mb-6">
-              <span className="text-brand-plum uppercase tracking-[0.4em] sm:tracking-[0.5em] text-[11px] sm:text-xs font-bold drop-shadow-sm">
-                The Sacred Union
+              <span className="text-brand-plum uppercase tracking-[0.4em] sm:tracking-[0.5em] text-sm sm:text-base font-bold drop-shadow-sm">
+                මංගල උත්සවය
               </span>
               <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-r from-brand-plum/60 to-transparent" />
             </div>
 
             <h2 className="text-5xl sm:text-6xl lg:text-7xl font-sinhala text-stone-800 mb-8 leading-[1.1] drop-shadow-sm">
-                <>Wedding <br /><span className="italic font-light text-brand-plum">Ceremony</span></>
+                <>විවාහ <br /><span className="italic font-light text-brand-plum">මංගල්‍යය</span></>
             </h2>
 
             <div className="text-stone-500/90 font-serif text-lg sm:text-xl leading-relaxed mb-16 max-w-2xl">
-              <p>Join us as we exchange our vows and step into our forever together.</p>
+              <p>අපගේ නව දිවියට ආශිර්වාද එක් කිරීමට ඔබත් එක්වන්න.</p>
             </div>
 
             {/* Premium Timeline */}
@@ -48,7 +48,7 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
                 </div>
                 <div>
                   <h4 className="font-sinhala text-2xl sm:text-3xl text-stone-800 group-hover:text-brand-plum transition-colors duration-500">
-                    Date: October 22, 2026
+                    දිනය: 2026 නොවැම්බර් 13
                   </h4>
                 </div>
               </div>
@@ -60,7 +60,7 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
                 </div>
                 <div>
                   <h4 className="font-sinhala text-2xl sm:text-3xl text-stone-800 leading-relaxed group-hover:text-brand-plum transition-colors duration-500">
-                    <span className="font-semibold text-stone-700">Location:</span> Sirimalie Reception Hall, <br className="hidden sm:block" /> Pannala
+                    <span className="font-semibold text-stone-700">ස්ථානය:</span> පේරාදේණිය රෙස්ට් හවුස්, <br className="hidden sm:block" /> කිංග්ස් හෝල්
                   </h4>
                 </div>
               </div>
@@ -72,11 +72,11 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
                 </div>
                 <div>
                   <h4 className="font-sinhala text-2xl sm:text-3xl text-stone-800 mb-3 group-hover:text-brand-plum transition-colors duration-500">
-                    Arrival
+                    වේලාව
                   </h4>
                   <div className="space-y-1.5 text-stone-500/90 font-sinhala text-base sm:text-lg">
                     <p>
-                      <span className="font-semibold text-stone-700">Time:</span> 08.30 AM
+                      <span className="font-semibold text-stone-700">වේලාව:</span> පෙ.ව. 09.00 - 4
                     </p>
                   </div>
                 </div>
@@ -89,49 +89,17 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
                 </div>
                 <div>
                   <h4 className="font-sinhala text-2xl sm:text-3xl text-stone-800 mb-3 group-hover:text-brand-plum transition-colors duration-500">
-                    Poruwa Ceremony
+                    පෝරුවේ චාරිත්‍ර
                   </h4>
                   <div className="space-y-1.5 text-stone-500/90 font-sinhala text-base sm:text-lg">
                     <p>
-                      <span className="font-semibold text-stone-700">Time:</span> 09.57 AM
+                      <span className="font-semibold text-stone-700">වේලාව:</span> පෙ.ව. 09.30 - පෙ.ව. 10.30
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Lunch */}
-              <div className="relative group">
-                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(176,137,104,0.3)] transition-all duration-500">
-                  <Utensils className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <div>
-                  <h4 className="font-sinhala text-2xl sm:text-3xl text-stone-800 mb-3 group-hover:text-brand-plum transition-colors duration-500">
-                    Lunch
-                  </h4>
-                  <div className="space-y-1.5 text-stone-500/90 font-sinhala text-base sm:text-lg">
-                    <p>
-                      <span className="font-semibold text-stone-700">Time:</span> 12.16 PM
-                    </p>
-                  </div>
-                </div>
-              </div>
 
-              {/* Going Away */}
-              <div className="relative group">
-                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(176,137,104,0.3)] transition-all duration-500">
-                  <Heart className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <div>
-                  <h4 className="font-sinhala text-2xl sm:text-3xl text-stone-800 mb-3 group-hover:text-brand-plum transition-colors duration-500">
-                    Going Away
-                  </h4>
-                  <div className="space-y-1.5 text-stone-500/90 font-sinhala text-base sm:text-lg">
-                    <p>
-                      <span className="font-semibold text-stone-700">Time:</span> 04.30 PM
-                    </p>
-                  </div>
-                </div>
-              </div>
 
 
             </div>

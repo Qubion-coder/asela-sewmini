@@ -84,7 +84,7 @@ export function VideoIntro({
           border: none;
           padding: 15px 40px;
           font-size: 18px;
-          font-family: "Cormorant Garamond", serif;
+          font-family: "Abhaya Libre", serif;
           border-radius: 30px;
           cursor: pointer;
           transition: all 0.3s ease;
@@ -121,11 +121,11 @@ export function VideoIntro({
             <div className="intro-overlay" />
             <div className="intro-content">
               <div className="mt-12 mb-auto text-white drop-shadow-md">
-                <p className="uppercase tracking-[0.4em] text-xs sm:text-sm font-bold mb-2 opacity-90">Wedding Invitation</p>
-                <h1 className="font-names text-5xl sm:text-6xl lg:text-7xl drop-shadow-lg tracking-wide">Supun & Kavindi</h1>
+                <p className="uppercase tracking-[0.4em] text-xl sm:text-2xl font-bold mb-2 opacity-90 font-sinhala">මංගල ආරාධනය</p>
+                <h1 className="font-sinhala text-5xl sm:text-6xl lg:text-7xl drop-shadow-lg tracking-wide">අසේල & සෙව්මිණි</h1>
               </div>
-              <button className="view-invitation-btn" onClick={handleEnter}>
-                View Invitation
+              <button className="view-invitation-btn font-sinhala" onClick={handleEnter}>
+                ආරාධනා පත්‍රය බලන්න
               </button>
             </div>
           </>

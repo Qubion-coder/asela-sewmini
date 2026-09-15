@@ -12,8 +12,6 @@ import { RSVPForm } from './RSVPForm';
 import { WishesSection } from './WishesSection';
 import { InviteeBanner } from './InviteeBanner';
 import { DeferredMount } from './DeferredMount';
-import { LoveNote } from './LoveNote';
-
 interface InvitationContentProps {
   active: boolean;
   eventParam: string;
@@ -63,13 +61,9 @@ export function InvitationContent({
 
       {fullInviteeName && (
         <DeferredMount active={active} delay={80}>
-          <InviteeBanner inviteeName={fullInviteeName} eventLabel={eventLabel} />
+          <InviteeBanner inviteeName={fullInviteeName} eventLabel={eventLabel} sprefix={sprefix} />
         </DeferredMount>
       )}
-
-      <DeferredMount active={active} delay={100} minHeight="30vh">
-        <LoveNote />
-      </DeferredMount>
 
       <DeferredMount active={active} delay={120} minHeight="40vh">
         <div className="py-24 sm:py-32 bg-gradient-to-b from-brand-blush via-white to-brand-blush relative overflow-hidden">
@@ -105,8 +99,8 @@ export function InvitationContent({
             />
           </div>
           <div className="relative z-10 max-w-6xl mx-auto px-6 mb-16 text-center">
-            <span className="text-stone-900 uppercase tracking-[0.4em] text-[10px] sm:text-[11px] font-bold drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]">
-              The Wait Is Almost Over
+            <span className="text-stone-900 uppercase tracking-[0.4em] text-sm sm:text-base font-bold drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)] font-sans">
+              තවත් සුළු මොහොතක් පමණි
             </span>
           </div>
           <div className="relative z-10">
@@ -146,13 +140,13 @@ export function InvitationContent({
         <footer className="py-12 bg-white border-t border-brand-lavender/20 text-center relative overflow-hidden mt-10">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-lavender/10 blur-[80px] rounded-full pointer-events-none" />
           <Heart className="w-6 h-6 mx-auto mb-6 text-brand-plum fill-brand-lavender/20" />
-          <p className="font-names text-4xl sm:text-5xl text-stone-800 mb-1">Supun & Kavindi</p>
+          <p className="font-names text-4xl sm:text-5xl text-stone-800 mb-1">අසේල සහ සෙව්මිණි</p>
 
-          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.4em] font-sans text-stone-400 font-semibold block mb-8">
-            October 22, 2026
+          <span className="text-sm sm:text-base uppercase tracking-[0.4em] font-sans text-stone-400 font-semibold block mb-8">
+            November 13, 2026
           </span>
-          <p className="text-stone-400 text-xs mt-4 font-sans tracking-wider">
-            Want a beautiful wedding website like this? Create yours with <a target="_blank" rel="noreferrer" className="text-brand-plum font-bold hover:text-brand-rose transition-colors underline decoration-brand-plum/30 hover:decoration-brand-rose" href="https://wa.me/94707819074">invitemint</a>
+          <p className="text-stone-400 text-base mt-4 font-sans tracking-wider">
+            ඔබටත් මෙවැනි අලංකාර මංගල වෙබ් අඩවියක් අවශ්‍යද? සාදාගන්න <a target="_blank" rel="noreferrer" className="text-brand-plum font-bold hover:text-brand-rose transition-colors underline decoration-brand-plum/30 hover:decoration-brand-rose" href="https://wa.me/94707819074">invitemint</a>
           </p>
         </footer>
       </DeferredMount>

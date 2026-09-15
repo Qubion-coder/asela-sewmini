@@ -4,7 +4,8 @@ import { Copy, Check, ExternalLink, Sparkles, User, Calendar, Link as LinkIcon, 
 import { toast } from 'sonner';
 
 export const Admin: React.FC = () => {
-  const [guestTitle, setGuestTitle] = useState('Mr.');
+  const [guestPrefix, setGuestPrefix] = useState('');
+  const [guestTitle, setGuestTitle] = useState('ඔබට');
   const [guestName, setGuestName] = useState('');
 
   const [generatedUrl, setGeneratedUrl] = useState('');
@@ -20,6 +21,7 @@ export const Admin: React.FC = () => {
     // Build URL with params
     const baseUrl = window.location.origin;
     const params = new URLSearchParams();
+    if (guestPrefix) params.append('eprefix', guestPrefix);
     if (guestTitle) params.append('title', guestTitle);
     params.append('name', guestName.trim());
 
@@ -40,25 +42,26 @@ export const Admin: React.FC = () => {
     });
   };
 
-  const generateFullMessage = (url: string, title: string, name: string) => {
-    const fullName = `${title ? title + ' ' : ''}${name}`;
+  const generateFullMessage = (url: string, prefix: string, title: string, name: string) => {
+    const fullName = `${prefix ? prefix + ' ' : ''}${name}`;
+    const suffix = title || 'ඔබට';
     
-    return `Dear ${fullName} ❤️
+    return `${fullName} ❤️
 
-With joyful hearts, we warmly invite you to celebrate one of the most special days of our lives as we begin our journey together.
+අපගේ ජීවිතයේ අතිශය විශේෂ දිනයක් වන අපගේ විවාහ මංගල්‍යයට ${suffix} ආදරයෙන් ආරාධනා කර සිටින්නෙමු.
 
-Please view our wedding invitation and all the event details through the link below 🌐:
+කරුණාකර පහත සබැඳිය හරහා අපගේ මංගල ආරාධනා පත්‍රය සහ උත්සවයේ සියලු විස්තර බලන්න 🌐:
 
 ${url}
 
-Your presence would truly mean the world to us, and we would be honored to celebrate this beautiful moment together.
+මෙම සුන්දර දිනය අප සමඟ සැමරීමට ඔබගේ පැමිණීම අපට මහත් ආශිර්වාදයක් වනු ඇත.
 
-With love,
-❤️ Supun & Kavindi`;
+ආදරයෙන්,
+❤️ අසේල සහ සෙව්මිණි`;
   };
 
   const handleCopyMessageActive = () => {
-    const msg = generateFullMessage(generatedUrl, guestTitle, guestName);
+    const msg = generateFullMessage(generatedUrl, guestPrefix, guestTitle, guestName);
     navigator.clipboard.writeText(msg).then(() => {
       toast.success('Full message copied to clipboard!');
     }).catch(() => {
@@ -81,7 +84,7 @@ With love,
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to Invitation
           </a>
-          <span className="px-4 py-1.5 rounded-full bg-brand-rose border border-brand-lavender/30 text-brand-plum text-xs font-bold uppercase tracking-widest shadow-sm">
+          <span className="px-4 py-1.5 rounded-full bg-brand-rose border border-brand-lavender/30 text-brand-plum text-base font-bold uppercase tracking-widest shadow-sm">
             Admin Dashboard
           </span>
         </div>
@@ -90,14 +93,14 @@ With love,
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-3 mb-4">
             <Sparkles className="w-5 h-5 text-brand-plum animate-pulse" />
-            <span className="text-brand-plum uppercase tracking-[0.5em] text-xs font-bold drop-shadow-sm">Invitation Generator</span>
+            <span className="text-brand-plum uppercase tracking-[0.5em] text-base font-bold drop-shadow-sm">Invitation Generator</span>
             <Sparkles className="w-5 h-5 text-brand-plum animate-pulse" />
           </div>
-          <h1 className="text-5xl sm:text-6xl font-display text-stone-800 tracking-tight mb-4 drop-shadow-sm">
-            Wedding <span className="italic font-light text-brand-plum">Admin Panel</span>
+          <h1 className="text-5xl sm:text-6xl font-display text-stone-800 tracking-tight mb-4 drop-shadow-sm font-sans">
+            Wedding <span className="italic font-light text-brand-plum">Dashboard</span>
           </h1>
-          <p className="text-stone-500 font-serif italic text-lg max-w-xl mx-auto">
-            Generate personalized invitation links for your guests with specific event access.
+          <p className="text-stone-500 font-sans text-lg max-w-xl mx-auto">
+            Generate personalized invitation links for your guests.
           </p>
         </div>
 
@@ -115,29 +118,44 @@ With love,
               {/* Guest Title & Name */}
               <div className="space-y-6">
                 <div>
-                  <label className="block text-xs uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 flex items-center gap-2 ml-1">
+                  <label className="block text-base uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 flex items-center gap-2 ml-1">
                     <User className="w-4 h-4 text-brand-plum" />
-                    Guest Title
+                    English Prefix (Optional)
+                  </label>
+                  <select
+                    value={guestPrefix}
+                    onChange={(e) => setGuestPrefix(e.target.value)}
+                    className="w-full bg-white px-6 py-4 rounded-full border border-stone-200/80 focus:ring-2 focus:ring-brand-lavender/30 focus:border-brand-plum/40 outline-none transition-all font-serif text-lg shadow-inner text-stone-800 cursor-pointer mb-6"
+                  >
+                    <option value="">No Prefix</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Miss.">Miss.</option>
+                    <option value="Mr. & Mrs.">Mr. & Mrs.</option>
+                    <option value="Family">Family</option>
+                    <option value="Dear">Dear</option>
+                  </select>
+
+                  <label className="block text-base uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 flex items-center gap-2 ml-1">
+                    <User className="w-4 h-4 text-brand-plum" />
+                    Sinhala Suffix
                   </label>
                   <select
                     value={guestTitle}
                     onChange={(e) => setGuestTitle(e.target.value)}
                     className="w-full bg-white px-6 py-4 rounded-full border border-stone-200/80 focus:ring-2 focus:ring-brand-lavender/30 focus:border-brand-plum/40 outline-none transition-all font-serif text-lg shadow-inner text-stone-800 cursor-pointer"
                   >
-                    <option value="">No Prefix</option>
-                    <option value="Mr.">Mr.</option>
-                    <option value="Mrs.">Mrs.</option>
-                    <option value="Miss">Miss</option>
-                    <option value="Mr. & Mrs.">Mr. & Mrs.</option>
-                    <option value="Family">Family</option>
-                    <option value="Dear">Dear</option>
+                    <option value="">No Suffix</option>
+                    <option value="ඔබට">ඔබට</option>
+                    <option value="ඔබ සැමට">ඔබ සැමට</option>
+                    <option value="ඔබ දෙපළට">ඔබ දෙපළට</option>
                   </select>
                 </div>
 
 
 
                 <div>
-                  <label className="block text-xs uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 flex items-center gap-2 ml-1">
+                  <label className="block text-base uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 flex items-center gap-2 ml-1">
                     <User className="w-4 h-4 text-brand-plum" />
                     Guest Name
                   </label>
@@ -156,10 +174,10 @@ With love,
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-stone-800 text-brand-rose py-5 rounded-full font-sans tracking-[0.3em] font-bold text-xs uppercase hover:bg-stone-900 transition-all shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.25)] active:scale-[0.98] flex items-center justify-center gap-3"
+                className="w-full bg-stone-800 text-brand-rose py-5 rounded-full font-sans tracking-[0.3em] font-bold text-base uppercase hover:bg-stone-900 transition-all shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.25)] active:scale-[0.98] flex items-center justify-center gap-3"
               >
                 <LinkIcon className="w-4 h-4 text-brand-plum" />
-                Generate Invitation Link
+                Generate Link
               </button>
             </form>
           </motion.div>
@@ -181,25 +199,25 @@ With love,
               {generatedUrl ? (
                 <div className="space-y-6 animate-fadeIn">
                   <div className="p-5 bg-stone-50 rounded-2xl border border-stone-200/80 shadow-inner">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-brand-plum mb-3 flex items-center gap-2">
+                    <p className="text-sm font-bold uppercase tracking-widest text-brand-plum mb-3 flex items-center gap-2">
                       <Sparkles className="w-3 h-3" /> WhatsApp Message Preview
                     </p>
                     <div className="text-sm text-stone-700 font-serif whitespace-pre-wrap leading-relaxed bg-white/60 p-4 rounded-xl border border-stone-100">
-                      {generateFullMessage(generatedUrl, guestTitle, guestName)}
+                      {generateFullMessage(generatedUrl, guestPrefix, guestTitle, guestName)}
                     </div>
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3">
                     <button
                       onClick={() => handleCopy(generatedUrl)}
-                      className="flex-1 bg-brand-plum text-white py-3.5 px-6 rounded-full font-sans tracking-[0.2em] font-bold text-[11px] uppercase hover:bg-brand-plum/90 transition-all shadow-md flex items-center justify-center gap-2 active:scale-95"
+                      className="flex-1 bg-brand-plum text-white py-3.5 px-6 rounded-full font-sans tracking-[0.2em] font-bold text-sm uppercase hover:bg-brand-plum/90 transition-all shadow-md flex items-center justify-center gap-2 active:scale-95"
                     >
                       {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                       {copied ? 'Copied!' : 'Copy Link Only'}
                     </button>
                     <button
                       onClick={handleCopyMessageActive}
-                      className="flex-1 bg-brand-rose text-brand-plum py-3.5 px-6 rounded-full font-sans tracking-[0.2em] font-bold text-[11px] uppercase hover:bg-brand-rose/90 transition-all shadow-sm border border-brand-lavender/30 flex items-center justify-center gap-2 active:scale-95"
+                      className="flex-1 bg-brand-rose text-brand-plum py-3.5 px-6 rounded-full font-sans tracking-[0.2em] font-bold text-sm uppercase hover:bg-brand-rose/90 transition-all shadow-sm border border-brand-lavender/30 flex items-center justify-center gap-2 active:scale-95"
                     >
                       <Copy className="w-4 h-4" />
                       Copy Full Message

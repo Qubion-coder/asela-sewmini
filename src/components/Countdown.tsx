@@ -32,10 +32,10 @@ export const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
   return (
     <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-10 py-6">
       {[
-        { label: 'Days', value: timeLeft.days },
-        { label: 'Hours', value: timeLeft.hours },
-        { label: 'Minutes', value: timeLeft.minutes },
-        { label: 'Seconds', value: timeLeft.seconds },
+        { label: 'දින', value: timeLeft.days },
+        { label: 'පැය', value: timeLeft.hours },
+        { label: 'මිනිත්තු', value: timeLeft.minutes },
+        { label: 'තත්පර', value: timeLeft.seconds },
       ].map((item, i) => (
         <motion.div 
           key={item.label}
@@ -56,7 +56,7 @@ export const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
             {/* Divider line */}
             <div className="w-10 h-[1.5px] bg-gradient-to-r from-transparent via-brand-plum/50 to-transparent mb-4" />
             {/* Label */}
-            <span className="text-[10px] sm:text-xs uppercase tracking-[0.4em] text-stone-600 font-semibold">{item.label}</span>
+            <span className="text-sm sm:text-base uppercase tracking-[0.4em] text-stone-600 font-semibold">{item.label}</span>
           </div>
         </motion.div>
       ))}

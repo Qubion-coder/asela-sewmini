@@ -5,9 +5,10 @@ import { Sparkles, Heart } from 'lucide-react';
 interface InviteeBannerProps {
   inviteeName: string;
   eventLabel: string;
+  sprefix?: string;
 }
 
-export const InviteeBanner: React.FC<InviteeBannerProps> = ({ inviteeName, eventLabel }) => {
+export const InviteeBanner: React.FC<InviteeBannerProps> = ({ inviteeName, eventLabel, sprefix = 'ඔබට' }) => {
   return (
     <div className="w-full bg-gradient-to-r from-brand-rose/40 via-brand-rose/80 to-brand-rose/40 border-y border-brand-lavender/30 py-12 px-6 relative overflow-hidden shadow-sm">
       {/* Decorative background glows */}
@@ -29,7 +30,7 @@ export const InviteeBanner: React.FC<InviteeBannerProps> = ({ inviteeName, event
           <div className="flex items-center gap-4 justify-center max-w-xl mx-auto">
             <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-brand-plum/40" />
             <p className="text-stone-600 font-sinhala text-lg sm:text-xl">
-              We cordially invite you to share the joy of our wedding celebration.
+              අපගේ විවාහ මංගල්‍යයේ සතුට බෙදා ගැනීමට අපි {sprefix} සාදරයෙන් ආරාධනා කරමු.
             </p>
             <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-brand-plum/40" />
           </div>

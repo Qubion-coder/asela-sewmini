@@ -35,7 +35,7 @@ export const WishesSection: React.FC<WishesSectionProps> = ({ eventParam = 'both
       setFormData(prev => ({ ...prev, name: inviteeName }));
     }
   }, [inviteeName]);
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbxDDqMN28oCqMQVBYIG7QtWK9AKpXmtkzsKCY9uK9uatHN4FKJKspDkTwJtL03_BeEuUg/exec";
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbyLjR32BXVu98JEMqmTD3g1FqfSicHzdntG4QJQ5cMY3QlevO0yKkD7o-aPapCB2j8J/exec";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -80,11 +80,11 @@ export const WishesSection: React.FC<WishesSectionProps> = ({ eventParam = 'both
 
       <div className="text-center mb-16 relative">
         <Sparkles className="absolute -top-8 left-1/2 -translate-x-1/2 w-8 h-8 text-brand-lavender/40 animate-pulse" />
-        <span className="text-brand-plum uppercase tracking-[0.5em] text-[10px] font-bold mb-4 block drop-shadow-sm">
-          Guestbook
+        <span className="text-brand-plum uppercase tracking-[0.5em] text-sm font-bold mb-4 block drop-shadow-sm font-sans">
+          සුබ පැතුම්
         </span>
         <h2 className="text-5xl sm:text-7xl font-sinhala text-stone-800 tracking-tight drop-shadow-sm">
-          Blessings & <span className="italic font-light text-brand-plum">Wishes</span>
+          ආශිර්වාද සහ <span className="italic font-light text-brand-plum">සුබ පැතුම්</span>
         </h2>
         <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-brand-lavender/60 to-transparent mx-auto mt-8" />
       </div>
@@ -105,17 +105,17 @@ export const WishesSection: React.FC<WishesSectionProps> = ({ eventParam = 'both
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="text-center mb-10">
               <p className="text-stone-500 font-sinhala text-lg leading-relaxed max-w-lg mx-auto">
-                Please leave your blessings and wishes for our future journey here.
+                අපගේ අනාගත ගමනට ඔබගේ ආශිර්වාද සහ සුබ පැතුම් මෙහි එක් කරන්න.
               </p>
             </div>
 
             <div className="space-y-6">
               <div>
-                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 ml-2 text-left">Your Name</label>
+                <label className="block text-sm uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 ml-2 text-left font-sans">ඔබගේ නම</label>
                 <input
                   required
                   type="text"
-                  placeholder="E.g., Uncle John"
+                  placeholder="උදා: නිමල් මාමා"
                   className="w-full bg-white/80 px-6 py-4 rounded-full border border-stone-200/60 focus:ring-2 focus:ring-brand-lavender/30 focus:border-brand-plum/40 outline-none transition-all duration-300 font-serif italic text-lg shadow-inner placeholder:text-stone-300 text-stone-700"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -123,10 +123,10 @@ export const WishesSection: React.FC<WishesSectionProps> = ({ eventParam = 'both
               </div>
               
               <div>
-                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 ml-2 text-left">Your Message</label>
+                <label className="block text-sm uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 ml-2 text-left font-sans">ඔබගේ පණිවිඩය</label>
                 <textarea
                   required
-                  placeholder="Wishing you a lifetime of happiness..."
+                  placeholder="ඔබට සුබ අනාගතයක් ප්‍රාර්ථනා කරමි..."
                   className="w-full bg-white/80 px-6 py-5 rounded-[2rem] border border-stone-200/60 focus:ring-2 focus:ring-brand-lavender/30 focus:border-brand-plum/40 outline-none transition-all duration-300 h-36 resize-none font-serif italic text-lg shadow-inner placeholder:text-stone-300 text-stone-700"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -138,14 +138,14 @@ export const WishesSection: React.FC<WishesSectionProps> = ({ eventParam = 'both
               <button
                 disabled={isSubmitting}
                 type="submit"
-                className="w-full bg-stone-800 text-brand-rose py-5 rounded-full font-sans tracking-[0.3em] font-bold text-[11px] uppercase hover:bg-stone-900 transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.25)] active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70"
+                className="w-full bg-stone-800 text-brand-rose py-5 rounded-full font-sans tracking-[0.3em] font-bold text-sm uppercase hover:bg-stone-900 transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.25)] active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70"
               >
                 {isSubmitting ? (
                   <Loader2 className="w-5 h-5 animate-spin" />
                 ) : (
                   <>
                     <Send className="w-4 h-4 text-brand-plum" />
-                    Share Blessing
+                    සුබ පැතුම යවන්න
                   </>
                 )}
               </button>
@@ -167,7 +167,7 @@ export const WishesSection: React.FC<WishesSectionProps> = ({ eventParam = 'both
                 <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-brand-plum/20 to-brand-lavender/40 group-hover:from-brand-plum group-hover:to-brand-lavender transition-all duration-500" />
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-4 mb-4">
                   <h4 className="font-display text-2xl text-stone-800 tracking-tight pl-2">{wish.name}</h4>
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-stone-400 font-bold bg-white/60 px-3 py-1 rounded-full border border-stone-100/50">
+                  <span className="text-sm uppercase tracking-[0.2em] text-stone-400 font-bold bg-white/60 px-3 py-1 rounded-full border border-stone-100/50">
                     {wish.createdAt ? getRelativeTime(wish.createdAt) : 'just now'}
                   </span>
                 </div>

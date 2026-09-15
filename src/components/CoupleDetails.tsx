@@ -17,11 +17,11 @@ export const CoupleDetails: React.FC = () => {
         >
           <div className="inline-flex items-center gap-4 mb-6 mt-4">
             <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-r from-transparent to-brand-plum/60" />
-            <span className="text-brand-plum uppercase tracking-[0.5em] text-[11px] font-semibold font-sans drop-shadow-sm">The Protagonists</span>
+            <span className="text-brand-plum uppercase tracking-[0.5em] text-sm font-semibold font-sans drop-shadow-sm">මනාල යුවළ</span>
             <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-l from-transparent to-brand-plum/60" />
           </div>
           <h2 className="text-5xl sm:text-7xl font-names text-stone-800 tracking-tight drop-shadow-sm">
-            Supun <span className="text-brand-plum font-light mx-2">&</span> Kavindi
+            අසේල <span className="text-brand-plum font-light mx-2">&</span> සෙව්මිණි
 
           </h2>
         </motion.div>
@@ -37,10 +37,9 @@ export const CoupleDetails: React.FC = () => {
           className="text-center lg:text-right flex-1 lg:pr-10 order-1"
         >
           <div className="mb-4 flex flex-col items-center lg:items-end">
-            <span className="text-brand-plum uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Groom</span>
-            <h3 className="text-4xl sm:text-5xl font-names text-stone-800 mb-1 drop-shadow-sm">Supun</h3>
-            <h4 className="text-2xl sm:text-3xl font-sinhala text-stone-700 mb-3 drop-shadow-sm">I. Supun Sandaruwan Fernando</h4>
-            <p className="text-stone-500/90 font-serif text-base sm:text-lg">Beloved son of Mr. & Mrs. I. Greshan Fernando and W.E.M Tekla Indrani,</p>
+            <span className="text-brand-plum uppercase tracking-[0.4em] text-sm font-bold mb-3 block">මනාලයා</span>
+            <h3 className="text-4xl sm:text-5xl font-names text-stone-800 mb-3 drop-shadow-sm">අසේල</h3>
+            <p className="text-stone-500/90 font-serif text-base sm:text-lg">කින්සිරිපාල වෙදගෙදර සහ මාලනි වෙදගෙදර යුවළගේ ආදරණීය පුතුනුවන්,</p>
           </div>
           <div className="hidden lg:flex justify-end mt-8">
             <Heart className="w-6 h-6 text-brand-lavender/60 fill-brand-lavender/20 transform hover:scale-110 transition-transform cursor-pointer" />
@@ -59,10 +58,9 @@ export const CoupleDetails: React.FC = () => {
           className="text-center lg:text-left flex-1 lg:pl-10 order-2"
         >
           <div className="mb-4 flex flex-col items-center lg:items-start">
-            <span className="text-brand-plum uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Bride</span>
-            <h3 className="text-4xl sm:text-5xl font-names text-stone-800 mb-1 drop-shadow-sm">Kavindi</h3>
-            <h4 className="text-2xl sm:text-3xl font-sinhala text-stone-700 mb-3 drop-shadow-sm">K.G. Isini Kavindi Wijerathna</h4>
-            <p className="text-stone-500/90 font-serif text-base sm:text-lg">Beloved daughter of Mr. & Mrs. K.G. Sunil Wijerathna and U.D.L. Pemalatha,</p>
+            <span className="text-brand-plum uppercase tracking-[0.4em] text-sm font-bold mb-3 block">මනාලිය</span>
+            <h3 className="text-4xl sm:text-5xl font-names text-stone-800 mb-3 drop-shadow-sm">සෙව්මිණි</h3>
+            <p className="text-stone-500/90 font-serif text-base sm:text-lg">අබේරත්න සහ ඉන්ද්‍රානි අබේරත්න යුවළගේ ආදරණීය දියණිය,</p>
           </div>
           <div className="hidden lg:flex justify-start mt-8">
             <Heart className="w-6 h-6 text-brand-lavender/60 fill-brand-lavender/20 transform hover:scale-110 transition-transform cursor-pointer" />

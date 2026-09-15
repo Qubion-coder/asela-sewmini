@@ -17,15 +17,16 @@ export default function App() {
 
   const params = new URLSearchParams(window.location.search);
   const titleParam = params.get('title') || '';
+  const eprefixParam = params.get('eprefix') || '';
   const nameParam = params.get('name') || '';
-  const sprefixParam = params.get('sprefix') || 'you';
+  const sprefixParam = titleParam || 'ඔබට';
   const eventParam = params.get('event') || 'both';
 
-  const fullInviteeName = `${titleParam} ${nameParam}`.trim();
+  const fullInviteeName = `${eprefixParam ? eprefixParam + ' ' : ''}${nameParam}`.trim().replace(/\s+/g, ' ');
 
   let eventLabel = 'Our Wedding Celebration';
 
-  const weddingDate = new Date('2026-10-22T08:30:00');
+  const weddingDate = new Date('2026-11-13T09:30:00');
 
   useEffect(() => {
 

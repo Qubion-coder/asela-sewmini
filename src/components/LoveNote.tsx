@@ -19,16 +19,14 @@ export const LoveNote: React.FC = () => {
         <div className="text-center space-y-8">
           <Quote className="w-12 h-12 text-brand-plum/20 mx-auto rotate-180 mb-2" />
           
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-names text-brand-plum italic leading-relaxed px-4">
-            "Two hearts, two souls, and one beautiful journey…"
-          </h3>
+            "හදවත් දෙකක්, ආත්මයන් දෙකක්, එක් සුන්දර ගමනක්..."
           
           <div className="space-y-6 text-stone-600 font-sans text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto px-4 font-light">
             <p>
-              With love in our hearts and dreams in our eyes, we are beginning a new chapter of our lives together. We would be truly blessed to have our loved ones beside us as we promise to walk hand in hand, through every joy, every challenge, and every beautiful moment that life brings.
+              හදවත පිරි ආදරයෙන් සහ දෑස පිරි සිහින සමඟින්, අපි අපගේ ජීවිතයේ නව පරිච්ඡේදයක් ආරම්භ කරමු. ජීවිතයේ සෑම සතුටක්ම සහ සෑම සුන්දර මොහොතක්ම අත්වැල් බැඳගෙන ගෙවා දැමීමට අප පොරොන්දු වන මේ මොහොතේ, අපගේ ආදරණීයයන් අප අසල සිටීම අපට මහත් ආශිර්වාදයකි.
             </p>
             <p>
-              Our forever begins with a <span className="font-names text-2xl text-brand-plum">"Yes,"</span> and we would love for you to be there to witness the beginning of our happily ever after.
+              අපගේ සදාකාලික ගමන ආරම්භ වන මෙම සුන්දර මොහොතේ සාක්ෂිකරුවන් වීමට ඔබටත් ආරාධනා කරමු.
             </p>
           </div>
           
