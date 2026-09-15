@@ -1,4 +1,4 @@
-const SPREADSHEET_ID = '1IYsTHUnfOIHGcwQvoTcjOc5X2wKZJDIrqxqxXtpVpZY';
+const SPREADSHEET_ID = '1OGHbPO20YmI1Sp0FXOqrusgOy6UP_IDUZ0JFQKjVBp8';
 
 function doPost(e) {
   try {
@@ -13,20 +13,17 @@ function doPost(e) {
     const sheet = getOrCreateSheet_(ss, sheetKey);
 
     if (sheetKey === 'RSVP') {
-      ensureHeaders_(sheet, ['Timestamp', 'Full Name', 'Guests', 'Event', 'Dietary Notes']);
+      ensureHeaders_(sheet, ['Timestamp', 'Full Name', 'Guests']);
       sheet.appendRow([
         new Date(),
         payload.fullName || '',
         payload.guests || '',
-        payload.event || '',
-        payload.dietaryNotes || '',
       ]);
     } else {
-      ensureHeaders_(sheet, ['Timestamp', 'Name', 'Event', 'Message']);
+      ensureHeaders_(sheet, ['Timestamp', 'Name', 'Message']);
       sheet.appendRow([
         new Date(),
         payload.name || '',
-        payload.event || '',
         payload.message || '',
       ]);
     }

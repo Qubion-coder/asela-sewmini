@@ -13,10 +13,9 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
   const [formData, setFormData] = useState({
     fullName: inviteeName,
     guests: '1',
-    dietaryNotes: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbxWSnk7KkwW1e6hWqrhMoy8hCHJD-_TXCbH8djiBJbAOzwB2ar3USkKfaysZypSnHhd/exec";
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbxDDqMN28oCqMQVBYIG7QtWK9AKpXmtkzsKCY9uK9uatHN4FKJKspDkTwJtL03_BeEuUg/exec";
 
   useEffect(() => {
     if (inviteeName) {
@@ -34,8 +33,6 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
       payload.append('sheet', 'RSVP');
       payload.append('fullName', formData.fullName);
       payload.append('guests', formData.guests);
-      payload.append('dietaryNotes', formData.dietaryNotes);
-      payload.append('event', eventParam);
 
       await fetch(scriptUrl, {
         method: 'POST',
@@ -45,7 +42,7 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
 
       setStatus('success');
       toast.success('Your RSVP has been warmly received!');
-      setFormData({ fullName: inviteeName, guests: '1', dietaryNotes: '' });
+      setFormData({ fullName: inviteeName, guests: '1' });
     } catch (error) {
       console.error('Error sending RSVP: ', error);
       setStatus('error');
@@ -158,15 +155,6 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 ml-2">Dietary Notes (Optional)</label>
-                  <textarea
-                    placeholder="We'd love to know if you have any allergies..."
-                    className="w-full bg-white/80 px-6 py-4 rounded-[2rem] border border-stone-200/60 focus:ring-2 focus:ring-brand-lavender/30 focus:border-brand-plum/40 outline-none transition-all duration-300 h-28 resize-none font-serif italic text-lg shadow-inner placeholder:text-stone-300"
-                    value={formData.dietaryNotes}
-                    onChange={(e) => setFormData({ ...formData, dietaryNotes: e.target.value })}
-                  />
-                </div>
 
                 <div className="pt-4">
                   <button
