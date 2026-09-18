@@ -39,7 +39,7 @@ export const CoupleDetails: React.FC = () => {
           <div className="mb-4 flex flex-col items-center lg:items-end">
             <span className="text-brand-plum uppercase tracking-[0.4em] text-sm font-bold mb-3 block">මනාලයා</span>
             <h3 className="text-4xl sm:text-5xl font-names text-stone-800 mb-3 drop-shadow-sm">අසේල</h3>
-            <p className="text-stone-500/90 font-serif text-base sm:text-lg">කින්සිරිපාල වෙදගෙදර සහ මාලනි වෙදගෙදර යුවළගේ ආදරණීය පුතුනුවන්,</p>
+            <p className="text-stone-500/90 font-serif text-base sm:text-lg">කිත්සිරිපාල වෙදගෙදර සහ මාලනි වෙදගෙදර යුවළගේ ආදරණීය පුතුනුවන්,</p>
           </div>
           <div className="hidden lg:flex justify-end mt-8">
             <Heart className="w-6 h-6 text-brand-lavender/60 fill-brand-lavender/20 transform hover:scale-110 transition-transform cursor-pointer" />

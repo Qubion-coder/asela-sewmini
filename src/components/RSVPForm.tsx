@@ -148,6 +148,7 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
                       <option value="2">දෙදෙනෙක් පැමිණේ (2)</option>
                       <option value="3">තිදෙනෙක් පැමිණේ (3)</option>
                       <option value="4">සිව්දෙනෙක් පැමිණේ (4)</option>
+                      <option value="5">පස්දෙනෙක් පැමිණේ (5)</option>
                     </select>
                     <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-brand-plum transition-transform duration-300 group-hover:scale-110">
                       <Heart className="w-5 h-5 fill-brand-lavender/30 drop-shadow-sm" />
